@@ -1,0 +1,291 @@
+/* --- General Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #1abc9c;
+    --light-gray: #f8f9fa;
+    --dark-gray: #34495e;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    background: linear-gradient(180deg, var(--secondary-color) 0%, var(--dark-gray) 100%);
+    min-height: 100vh;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link {
+    color: var(--text-light);
+    padding: 12px 20px;
+    margin: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- Main Content --- */
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+/* --- Stat Cards (Dashboard) --- */
+.stat-card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card .card-body {
+    padding: 25px;
+    position: relative;
+}
+
+.stat-card .stat-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.5rem;
+    opacity: 0.2;
+}
+.stat-card h6 {
+    font-weight: 600;
+}
+.stat-card h3 {
+    font-weight: 700;
+}
+
+.revenue-card { background: linear-gradient(135deg, #5c6bc0, #3f51b5); }
+.bookings-card { background: linear-gradient(135deg, #66bb6a, #43a047); }
+.cars-card { background: linear-gradient(135deg, #ffa726, #fb8c00); }
+.customers-card { background: linear-gradient(135deg, #ef5350, #e53935); }
+
+/* --- Chart Container --- */
+.chart-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.chart-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* --- Table Styles --- */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+}
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+.table-hover > tbody > tr:hover > * {
+  --bs-table-accent-bg: var(--bs-table-hover-bg);
+  color: var(--bs-table-hover-color);
+}
+.status-badge {
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+.status-success { background-color: var(--success-color); }
+.status-warning { background-color: var(--warning-color); }
+.status-danger { background-color: var(--danger-color); }
+.status-info { background-color: var(--info-color); }
+
+/* --- Calendar --- */
+.calendar-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.calendar-day-name, .calendar-day {
+    text-align: center;
+    padding: 10px;
+}
+.calendar-day-name {
+    font-weight: bold;
+}
+.calendar-day {
+    border: 1px solid #eee;
+    min-height: 120px;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    transition: background-color 0.3s;
+}
+.calendar-day:not(.other-month):hover {
+    background-color: #f0f8ff;
+}
+.calendar-day.other-month {
+    background-color: #f7f7f7;
+    color: #ccc;
+}
+.day-number {
+    font-weight: bold;
+}
+.calendar-event {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    margin-top: 4px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --- Invoice/Quote Page --- */
+.invoice-actions {
+    margin-bottom: 20px;
+}
+
+.invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 24px;
+    background: white;
+}
+
+.invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.invoice-box table tr.top table td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.invoice-box table tr.item td {
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+}
+.invoice-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Print Styles --- */
+@media print {
+    body, .main-content {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    .sidebar, .invoice-actions, .page-header, .btn {
+        display: none;
+    }
+    .invoice-box {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        padding: 0;
+    }
+}
